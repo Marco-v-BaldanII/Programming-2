@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	
+	//use a pointer to print a 2D Matrix with 1 for loop
+
+	int Mat[2][2] = { {1,2},
+					  {3,4} };
+
+	int* ptr = &Mat[0][0];
+
+	//Since C++ stores matrices by rows, incrementing the pointer will allow you to linearly traverse the matrix
+	for (ptr = &Mat[0][0]; ptr <= &Mat[1][1]; ++ptr) {
+		cout << *ptr << " ";
+	}
+}
