@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	//Write a program in C to store n elements in an array and print the elements using pointer.
+
+	cout << "Input num of elements for the array: " << endl;
+	int num;
+	cin >> num;
+
+	//Allocate memory for array
+
+	int* Array = new int[num];
+
+	cout << "input the numbers for the array: " << endl;
+
+	int elem;
+	for (int i = 0; i < num; ++i) {
+		cin >> elem;
+		Array[i] = elem;
+	}
+
+	//Print Array
+	cout << endl;
+	for (int j = 0; j < num; ++j) {
+		cout << *(Array +j) << " Adress" << Array + j << endl
+			<< " ";
+	}
+
+	cout << "Do you want to change the numbers?" << endl;
+	int answe;
+	cin >> answe;
+	if (answe == 1) {
+		//Free space
+		delete[] Array;
+
+		int* Array = new int[num];
+		cout << "input the numbers for the array: " << endl;
+
+		int elem;
+		for (int i = 0; i < num; ++i) {
+			cin >> elem;
+			Array[i] = elem;
+		}
+
+		//Print Array using ptr
+		cout << endl;
+		for (int j = 0; j < num; ++j) {
+			cout << *(Array +j) << " Adress" << Array + j << endl;
+		}
+	}
+
+}
