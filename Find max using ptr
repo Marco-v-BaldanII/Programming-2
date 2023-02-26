@@ -1,0 +1,20 @@
+#include<iostream>;
+using namespace std;
+
+void Max(int* A, int* B);
+
+int main() {
+	//Write a program in C++ to find the maximum number between two numbers using a pointer.
+	int A, B;
+	cin >> A;
+	cin >> B;
+
+	Max(&A, &B);
+}
+
+void Max(int* A, int* B) {
+
+	if (*A > *B) cout << *A;
+	else cout << *B;
+
+}
