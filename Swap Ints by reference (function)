@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+void SwapElems(int& refA, int& refB);
+
+int main() {
+
+
+	//Write a program in C to swap elements using call by reference.
+
+	int A, B;
+	cout << "Input num 1 ";
+	cin >> A;
+	cout << "Input num 2 ";
+	cin >> B;
+
+	SwapElems(A, B);
+	cout << endl << "Elem 1 is " << A << " Elem 2 is " << B;
+}
+
+void SwapElems(int& refA, int& refB) {
+
+	int aux = refA;
+	refA = refB;
+	refB = aux;
+}
