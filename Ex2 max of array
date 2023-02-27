@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+
+void FindMax(int* num1, int size);
+void Elems(int& elems);
+
+int main() {
+
+	cout << "Introduce the number of elements of array: " << endl;
+	int elems;
+	cin >> elems;
+
+	int& ref = elems;
+	Elems(ref);
+	
+}
+
+void Elems(int& elems) {
+	cout << "Introduce the elements: " << endl;
+	int elem = elems;
+	//Allocate necessary memory
+	int* vec = new int[elems];
+	int num;
+
+	for (int i = 0; i < elems; ++i) {
+
+		cin >> num;
+		vec[i] = num;
+	}
+
+	FindMax(vec, elem);
+	delete[] vec;
+}
+
+void FindMax(int* num1, int size) {
+	int aux = *num1;
+	int i = 0;
+	//The cnt will be equal to the i (vector position) when the max is found
+	int cnt = 0;
+	for (i = 0; i < size; ++i) {
+		
+		if (num1[i] > aux) {
+			aux = num1[i];
+			cnt = i;
+		}
+	}
+	cout << "The max is " << num1[cnt];
+	cout << endl << "It's adress is: " << &num1[cnt];
+	
+}
