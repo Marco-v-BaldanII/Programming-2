@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+void FindLenght(const char* word, int& my);
+
+int main() {
+	//Write a program in C++ to Calculate the length of the string using a pointer.
+
+	const char* Word = "Marco";
+	int a = 9;
+	FindLenght(Word,a);
+	cout << a;
+
+
+}
+
+void FindLenght(const char* word, int& my) {
+
+	int i = 0;
+	while (word[i] != '\0') {
+		i++;
+	}
+	
+	int* ptrI = &i;
+	my = i;
+
+}
